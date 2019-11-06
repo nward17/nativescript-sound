@@ -1,6 +1,6 @@
 {
   "name": "nativescript-sound",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Play a sound in your NativeScript app",
   "main": "sound.js",
   "nativescript": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbristowe/nativescript-sound.git"
+    "url": "https://github.com/methompson/nativescript-sound.git"
   },
   "keywords": [
     "NativeScript",
@@ -19,7 +19,12 @@
     "Audio"
   ],
   "author": "John Bristowe <john@bristowe.com> (https://github.com/jbristowe)",
+  "contributors": [{
+    "name": "Mathew Thompson",
+    "email": "met@methompson.com",
+    "url": "https://github.com/methompson"
+  }],
   "license": "MIT",
-  "bugs": "https://github.com/jbristowe/nativescript-sound/issues",
-  "homepage": "https://github.com/jbristowe/nativescript-sound"
+  "bugs": "https://github.com/methompson/nativescript-sound/issues",
+  "homepage": "https://github.com/methompson/nativescript-sound"
 }

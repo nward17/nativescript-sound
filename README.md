@@ -7,7 +7,7 @@ Play a sound in your NativeScript app.
 Run the following command from the root of your project:
 
 ```
-tns plugin add nativescript-sound
+npm-install (to be determined)
 ```
 
 ## Usage
