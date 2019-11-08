@@ -2,12 +2,14 @@
 
 Play a sound in your NativeScript app.
 
+This project was originally programmed by John Bristowe. However when this plugin is used in a project installed on a phone with iOS 13.2, the entire application would crash. This fork is a modified version of the original project that solves the instantiation crash issue that I encountered. The rest of the project remained intact.
+
 ## Installation
 
 Run the following command from the root of your project:
 
 ```
-npm-install (to be determined)
+npm i nativescript-sound-kak
 ```
 
 ## Usage
