@@ -1,25 +1,29 @@
-var common = require("./sound-common");
+import SoundCommon from './sound-common';
 
-var Sound = (function (_super) {
-    __extends(Sound, _super);
-    function Sound() {
-        _super.apply(this, arguments);
+class Sound extends SoundCommon {
+    constructor(path_arg){
+        super(path_arg);
 
         this._player = new android.media.SoundPool(1, android.media.AudioManager.STREAM_MUSIC, 0);
         this._soundId = this._player.load(this._path, 1);
     }
-    Sound.prototype.play = function () {
+
+    play(){
         this._player.play(this._soundId, 1.0, 1.0, 1, 0, 1.0);
     };
-    Sound.prototype.stop = function () {
+
+    stop(){
         this._player.stop(this._soundId);
     };
-    Sound.prototype.reset = function () {
-    };
-    return Sound;
-})(common.Sound);
-exports.Sound = Sound;
 
-exports.create = function(path) {
+    // Does nothing. This method is defined and may be used, so it has to be defined here.
+    reset(){};
+};
+
+const create = (path) => {
     return new Sound(path);
+};
+
+export {
+    create,
 };

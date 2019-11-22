@@ -1,29 +1,33 @@
-var common = require("./sound-common");
+import SoundCommon from './sound-common';
 
-var Sound = (function (_super) {
-    __extends(Sound, _super);
-    function Sound() {
-        _super.apply(this, arguments);
-        
+class Sound extends SoundCommon {
+    constructor(path_arg){
+        super(path_arg);
+
         this._url = NSURL.fileURLWithPath(this._path);
-        this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(this._url);
+        this._player = AVAudioPlayer.alloc().initWithContentsOfURLError(this._url);            
         this._player.prepareToPlay();
     }
-    Sound.prototype.play = function () {
+
+    play(){
         this._player.play();
     };
-    Sound.prototype.stop = function () {
+
+    stop(){
         this._player.stop();
     };
-    Sound.prototype.reset = function () {
+
+    reset(){
         this._player.stop();
         this._player.prepareToPlay();
         this._player.currentTime = 0;
     };
-    return Sound;
-})(common.Sound);
-exports.Sound = Sound;
+};
 
-exports.create = function(path) {
+const create = (path) => {
     return new Sound(path);
+};
+
+export {
+    create,
 };
