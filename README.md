@@ -29,10 +29,10 @@ import Sound from "nativescript-sound-kak";
 It's important to preload the audio file into the **sound** module before playing it; there is a delay during creation due to the audio being processed:
 
 ```js
-const tada = sound.create("./path/to/file.mp3"); // preload the audio file
+const beep = sound.create("./path/to/file.mp3"); // preload the audio file
 
 // play the sound (i.e. tap event handler)
-tada.play();
+beep.play();
 ```
 
 You may wish to check that the file actually exists:
@@ -43,20 +43,20 @@ import * as Sound from 'nativescript-sound-kak';
 
 // currentApp().path leads to your app folder in the project
 const pathToBeep = fs.path.join(fs.knownFolders.currentApp().path, '/assets/sounds/beep.mp3');
-let beepSound;
+let beep;
 if (fs.File.exists(pathToBeep)) {
-	beepSound = Sound.create(pathToBeep);
+	beep = Sound.create(pathToBeep);
 }
 ```
 
 ### stop
 
 ```js
-tada.stop();
+beep.stop();
 ```
 
 ### reset
 
 ```js
-tada.reset();
+beep.reset();
 ```
