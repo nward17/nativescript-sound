@@ -18,10 +18,10 @@ To use this plugin you must first require or import it:
 
 ```js
 //CommonJs
-const sound = require("nativescript-sound-kak");
+const Sound = require("nativescript-sound-kak");
 
 //ES6 Import
-import sound from "nativescript-sound-kak";
+import Sound from "nativescript-sound-kak";
 ```
 
 ### Create and Play
