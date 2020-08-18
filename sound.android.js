@@ -10,15 +10,15 @@ class Sound extends SoundCommon {
 
   play() {
     this._player.play(this._soundId, 1.0, 1.0, 1, 0, 1.0);
-  };
+  }
 
   stop() {
     this._player.stop(this._soundId);
-  };
+  }
+}
 
-  // Does nothing. This method is defined and may be used, so it has to be defined here.
-  reset() {};
-};
+// Doing nothing right now in Android
+const setBackground = (background) => {};
 
 const create = (path) => {
   return new Sound(path);
@@ -26,4 +26,5 @@ const create = (path) => {
 
 export {
   create,
+  setBackground,
 };

@@ -15,6 +15,14 @@ class Sound {
 
     this._path = path;
   }
-};
+
+  play() {}
+
+  stop() {}
+
+  reset() {}
+
+  setBackground() {}
+}
 
 export default Sound;

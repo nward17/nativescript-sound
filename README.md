@@ -21,7 +21,7 @@ To use this plugin you must first require or import it:
 const Sound = require("nativescript-sound-kak");
 
 //ES6 Import
-import Sound from "nativescript-sound-kak";
+import * as Sound from "nativescript-sound-kak";
 ```
 
 ### Create and Play
@@ -29,7 +29,7 @@ import Sound from "nativescript-sound-kak";
 It's important to preload the audio file into the **sound** module before playing it; there is a delay during creation due to the audio being processed:
 
 ```js
-const beep = sound.create("./path/to/file.mp3"); // preload the audio file
+const beep = Sound.create("./path/to/file.mp3"); // preload the audio file
 
 // play the sound (i.e. tap event handler)
 beep.play();
@@ -59,4 +59,20 @@ beep.stop();
 
 ```js
 beep.reset();
+```
+
+### Background Playback
+
+In iOS, the default playback method will silence all background sounds. You can define whether the audio playback in the app silences background audio (i.e. the Music app) or if it play concurrently.
+
+```js
+import * as Sound from 'nativescript-sound-kak';
+// Sets the audio playback to background, i.e. allows it to play at the same time as other background audio.
+Sound.setBackground(true);
+```
+
+```js
+import * as Sound from 'nativescript-sound-kak';
+// Turns off background playback. When the Sound object is created, background audio will be silenced
+Sound.setBackground(false);
 ```
