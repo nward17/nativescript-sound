@@ -9,7 +9,7 @@ This project was originally programmed by John Bristowe. However when this plugi
 Run the following command from the root of your project:
 
 ```
-npm i nativescript-sound-kak
+npm i nward17/nativescript-sound
 ```
 
 ## Usage
@@ -18,10 +18,10 @@ To use this plugin you must first require or import it:
 
 ```js
 //CommonJs
-const Sound = require("nativescript-sound-kak");
+const getSound = require("nativescript-sound");
 
 //ES6 Import
-import * as Sound from "nativescript-sound-kak";
+import getSound from "nativescript-sound";
 ```
 
 ### Create and Play
@@ -39,13 +39,17 @@ You may wish to check that the file actually exists:
 
 ```js
 import * as fs from "tns-core-modules/file-system";
-import * as Sound from 'nativescript-sound-kak';
+import getSound from "nativescript-sound";
 
 // currentApp().path leads to your app folder in the project
-const pathToBeep = fs.path.join(fs.knownFolders.currentApp().path, '/assets/sounds/beep.mp3');
+const pathToBeep = fs.path.join(
+  fs.knownFolders.currentApp().path,
+  "/assets/sounds/beep.mp3"
+);
 let beep;
 if (fs.File.exists(pathToBeep)) {
-	beep = Sound.create(pathToBeep);
+  const sound = getSound();
+  beep = sound.create(pathToBeep);
 }
 ```
 
@@ -66,13 +70,15 @@ beep.reset();
 In iOS, the default playback method will silence all background sounds. You can define whether the audio playback in the app silences background audio (i.e. the Music app) or if it play concurrently.
 
 ```js
-import * as Sound from 'nativescript-sound-kak';
+import getSound from "nativescript-sound";
+const sound = getSound();
 // Sets the audio playback to background, i.e. allows it to play at the same time as other background audio.
-Sound.setBackground(true);
+sound.setBackground(true);
 ```
 
 ```js
-import * as Sound from 'nativescript-sound-kak';
+import getSound from "nativescript-sound";
+const sound = getSound();
 // Turns off background playback. When the Sound object is created, background audio will be silenced
-Sound.setBackground(false);
+sound.setBackground(false);
 ```
